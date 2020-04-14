@@ -23,16 +23,20 @@ public class InstructionType {
         this.mnemonic = mnemonic;
         this.type = type;
         this.opcode = opcode.byteValue();
-        this.f3 = f3.byteValue();
-        this.f7 = f7.byteValue();
+        if (f3 != null) {
+            this.f3 = f3.byteValue();
+        }
+        if (f7 != null) {
+            this.f7 = f7.byteValue();
+        }
     }
 
     // Check if 32-bit word is this type of instruction
     // f3/f7 are null iff this type of instruction does not have a f3/f7 code
     public boolean matches(int binary) {
         return (binary & 0b111111) == opcode
-                && (f3 == null || ((binary >> 11) & 0b111) == f3)
-                && (f7 == null || ((binary >> 24) & 0b1111111) == f7);
+                && (f3 == null || ((binary >> 12) & 0b111) == f3)
+                && (f7 == null || ((binary >> 25) & 0b1111111) == f7);
     }
 
 }

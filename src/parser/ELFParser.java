@@ -1,9 +1,11 @@
 package parser;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
+import java.util.Arrays;
 
 public class ELFParser {
     private static final int SIZEOFUINT64STAR = 8;
@@ -35,6 +37,14 @@ public class ELFParser {
                 return new Instruction(type, binary);
 
         throw new RuntimeException(String.format("unknown instruction 0x%320X", binary));
+    }
+
+    private static int byteArrayToLeInt(byte[] encodedValue) {
+        int value = (encodedValue[3] << (Byte.SIZE * 3));
+        value |= (encodedValue[2] & 0xFF) << (Byte.SIZE * 2);
+        value |= (encodedValue[1] & 0xFF) << (Byte.SIZE);
+        value |= (encodedValue[0] & 0xFF);
+        return value;
     }
 
     public static ParsedELFBinary parse(String path) throws IOException {
@@ -69,7 +79,11 @@ public class ELFParser {
 
             Instruction[] instructions = new Instruction[code.length / 4];
             for (int i = 0; i < code.length; i += 4) {
-                //TODO call new Instruction(binary);
+                System.out.println("Decoding instruction at " + String.format("0x%x", i) + "...");
+                byte[] insBytes = Arrays.copyOfRange(code, i, i + 4);
+                int insInt = byteArrayToLeInt(insBytes);
+                instructions[i] = decode(insInt);
+                System.out.println("Got " + instructions[i].mnemonic);
             }
 
             return new ParsedELFBinary(code, data, instructions, entry_point);
