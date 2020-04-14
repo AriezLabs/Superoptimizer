@@ -8,27 +8,26 @@ import java.nio.channels.FileChannel;
 import java.util.Arrays;
 
 public class ELFParser {
-    private static final int SIZEOFUINT64STAR = 8;
     // page-aligned ELF header for storing file header (64 bytes),
     // program header (56 bytes), and code length (8 bytes)
     private static final int ELF_HEADER_LEN = 4096;
 
     private static final InstructionType[] decodeTable = {
             // f3/f7 are null iff this type of instruction does not have a f3/f7 code
-            new InstructionType("ecall", "i", 0b1110011, null, null),
-            new InstructionType("ld", "i", 0b0000011, 0b011, null),
-            new InstructionType("sd", "s", 0b0100011, 0b011, null),
-            new InstructionType("mul", "r", 0b0110011, 0b000, 0b0000001),
-            new InstructionType("divu", "r", 0b0110011, 0b101, 0b0000001),
-            new InstructionType("remu", "r", 0b0110011, 0b111, 0b0000001),
-            new InstructionType("sltu", "r", 0b0110011, 0b011, 0b0000000),
-            new InstructionType("jalr", "i", 0b1100111, 0b000, null),
-            new InstructionType("lui", "u", 0b0110111, null, null),
-            new InstructionType("addi", "i", 0b0010011, 0b000, null),
-            new InstructionType("sub", "r", 0b0110011, 0b000, 0b0100000),
-            new InstructionType("add", "r", 0b0110011, 0b000, 0b0000000),
-            new InstructionType("beq", "b", 0b1100011, 0b000, null),
-            new InstructionType("jal", "j", 0b1101111, null, null),
+            new InstructionType(Mnemonic.ECALL, Format.I, 0b1110011, null, null),
+            new InstructionType(Mnemonic.LD, Format.I, 0b0000011, 0b011, null),
+            new InstructionType(Mnemonic.SD, Format.S, 0b0100011, 0b011, null),
+            new InstructionType(Mnemonic.MUL, Format.R, 0b0110011, 0b000, 0b0000001),
+            new InstructionType(Mnemonic.DIVU, Format.R, 0b0110011, 0b101, 0b0000001),
+            new InstructionType(Mnemonic.REMU, Format.R, 0b0110011, 0b111, 0b0000001),
+            new InstructionType(Mnemonic.SLTU, Format.R, 0b0110011, 0b011, 0b0000000),
+            new InstructionType(Mnemonic.JALR, Format.I, 0b1100111, 0b000, null),
+            new InstructionType(Mnemonic.LUI, Format.U, 0b0110111, null, null),
+            new InstructionType(Mnemonic.ADDI, Format.I, 0b0010011, 0b000, null),
+            new InstructionType(Mnemonic.SUB, Format.R, 0b0110011, 0b000, 0b0100000),
+            new InstructionType(Mnemonic.ADD, Format.R, 0b0110011, 0b000, 0b0000000),
+            new InstructionType(Mnemonic.BEQ, Format.B, 0b1100011, 0b000, null),
+            new InstructionType(Mnemonic.JAL, Format.J, 0b1101111, null, null),
     };
 
     private static Instruction decode(int binary) {
@@ -37,14 +36,6 @@ public class ELFParser {
                 return new Instruction(type, binary);
 
         throw new RuntimeException(String.format("unknown instruction 0x%08X", binary));
-    }
-
-    private static int byteArrayToLeInt(byte[] encodedValue) {
-        int value = (encodedValue[3] << (Byte.SIZE * 3));
-        value |= (encodedValue[2] & 0xFF) << (Byte.SIZE * 2);
-        value |= (encodedValue[1] & 0xFF) << (Byte.SIZE);
-        value |= (encodedValue[0] & 0xFF);
-        return value;
     }
 
     public static ParsedELFBinary parse(String path) throws IOException {
@@ -61,9 +52,10 @@ public class ELFParser {
             if (magic[0] != 0x7f || magic[1] != 'E' || magic[2] != 'L' || magic[3] != 'F') {
                 throw new RuntimeException("File does not have ELF magic");
             }
-            long entry_point = buffer.getLong(10 * SIZEOFUINT64STAR);
-            long binary_length = buffer.getLong(12 * SIZEOFUINT64STAR);
-            long code_length = buffer.getLong(15 * SIZEOFUINT64STAR);
+
+            long entry_point = buffer.getLong(10 * 8);
+            long binary_length = buffer.getLong(12 * 8);
+            long code_length = buffer.getLong(15 * 8);
 
             // TODO: validate rest of header
 
@@ -79,11 +71,11 @@ public class ELFParser {
 
             Instruction[] instructions = new Instruction[code.length / 4];
             for (int i = 0; i < code.length; i += 4) {
-                System.out.println("Decoding instruction at " + String.format("0x%x", i) + "...");
+                // System.out.println("Decoding instruction at " + String.format("0x%x", i) + "...");
                 byte[] insBytes = Arrays.copyOfRange(code, i, i + 4);
-                int insInt = byteArrayToLeInt(insBytes);
+                int insInt = Util.byteArrayToLeInt(insBytes);
                 instructions[i / 4] = decode(insInt);
-                System.out.println("Got " + instructions[i / 4].mnemonic);
+                // System.out.println("Got " + instructions[i / 4].mnemonic);
             }
 
             return new ParsedELFBinary(code, data, instructions, entry_point);
