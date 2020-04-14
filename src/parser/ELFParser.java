@@ -36,7 +36,7 @@ public class ELFParser {
             if (type.matches(binary))
                 return new Instruction(type, binary);
 
-        throw new RuntimeException(String.format("unknown instruction 0x%320X", binary));
+        throw new RuntimeException(String.format("unknown instruction 0x%08X", binary));
     }
 
     private static int byteArrayToLeInt(byte[] encodedValue) {
@@ -82,8 +82,8 @@ public class ELFParser {
                 System.out.println("Decoding instruction at " + String.format("0x%x", i) + "...");
                 byte[] insBytes = Arrays.copyOfRange(code, i, i + 4);
                 int insInt = byteArrayToLeInt(insBytes);
-                instructions[i] = decode(insInt);
-                System.out.println("Got " + instructions[i].mnemonic);
+                instructions[i / 4] = decode(insInt);
+                System.out.println("Got " + instructions[i / 4].mnemonic);
             }
 
             return new ParsedELFBinary(code, data, instructions, entry_point);

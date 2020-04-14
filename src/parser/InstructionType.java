@@ -6,7 +6,7 @@ package parser;
 public class InstructionType {
     String mnemonic;
     String type;
-    Byte opcode = null;
+    Byte opcode;
     Byte f3 = null;
     Byte f7 = null;
 
@@ -33,8 +33,8 @@ public class InstructionType {
 
     // Check if 32-bit word is this type of instruction
     // f3/f7 are null iff this type of instruction does not have a f3/f7 code
-    public boolean matches(int binary) {
-        return (binary & 0b111111) == opcode
+    boolean matches(int binary) {
+        return (binary & 0b1111111) == opcode
                 && (f3 == null || ((binary >> 12) & 0b111) == f3)
                 && (f7 == null || ((binary >> 25) & 0b1111111) == f7);
     }
