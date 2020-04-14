@@ -1,0 +1,81 @@
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & MUL \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & MULH \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{010} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & MULHSU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{011} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & MULHU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{100} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & DIV \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & DIVU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{110} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & REM \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000001} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{111} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & REMU \\
+\cline{2-11}
+  
+
+

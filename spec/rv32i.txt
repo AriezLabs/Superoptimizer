@@ -1,0 +1,377 @@
+&
+\multicolumn{8}{|c|}{imm[31:12]} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110111} & LUI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{8}{|c|}{imm[31:12]} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010111} & AUIPC \\
+\cline{2-11}
+  
+
+&
+\multicolumn{8}{|c|}{imm[20$\vert$10:1$\vert$11$\vert$19:12]} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{1101111} & JAL \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{1100111} & JALR \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[12$\vert$10:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{imm[4:1$\vert$11]} &
+\multicolumn{1}{c|}{1100011} & BEQ \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[12$\vert$10:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{imm[4:1$\vert$11]} &
+\multicolumn{1}{c|}{1100011} & BNE \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[12$\vert$10:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{100} &
+\multicolumn{1}{c|}{imm[4:1$\vert$11]} &
+\multicolumn{1}{c|}{1100011} & BLT \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[12$\vert$10:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{imm[4:1$\vert$11]} &
+\multicolumn{1}{c|}{1100011} & BGE \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[12$\vert$10:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{110} &
+\multicolumn{1}{c|}{imm[4:1$\vert$11]} &
+\multicolumn{1}{c|}{1100011} & BLTU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[12$\vert$10:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{111} &
+\multicolumn{1}{c|}{imm[4:1$\vert$11]} &
+\multicolumn{1}{c|}{1100011} & BGEU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LB \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LH \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{010} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{100} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LBU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LHU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[11:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{imm[4:0]} &
+\multicolumn{1}{c|}{0100011} & SB \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[11:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{imm[4:0]} &
+\multicolumn{1}{c|}{0100011} & SH \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[11:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{010} &
+\multicolumn{1}{c|}{imm[4:0]} &
+\multicolumn{1}{c|}{0100011} & SW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & ADDI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{010} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SLTI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{011} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SLTIU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{100} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & XORI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{110} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & ORI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{111} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & ANDI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SLLI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SRLI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0100000} &
+\multicolumn{2}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SRAI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & ADD \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0100000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & SUB \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & SLL \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{010} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & SLT \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{011} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & SLTU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{100} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & XOR \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & SRL \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0100000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & SRA \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{110} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & OR \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{111} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0110011} & AND \\
+\cline{2-11}
+  
+
+&
+\multicolumn{2}{|c|}{fm} &
+\multicolumn{3}{c|}{pred} &
+\multicolumn{1}{c|}{succ} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0001111} & FENCE \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{000000000000} &
+\multicolumn{1}{c|}{00000} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{00000} &
+\multicolumn{1}{c|}{1110011} & ECALL \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{000000000001} &
+\multicolumn{1}{c|}{00000} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{00000} &
+\multicolumn{1}{c|}{1110011} & EBREAK \\
+\cline{2-11}
+

@@ -1,0 +1,148 @@
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{110} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LWU \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{011} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0000011} & LD \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{imm[11:5]} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{011} &
+\multicolumn{1}{c|}{imm[4:0]} &
+\multicolumn{1}{c|}{0100011} & SD \\
+\cline{2-11}
+  
+
+&
+\multicolumn{3}{|c|}{000000} &
+\multicolumn{3}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SLLI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{3}{|c|}{000000} &
+\multicolumn{3}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SRLI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{3}{|c|}{010000} &
+\multicolumn{3}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0010011} & SRAI \\
+\cline{2-11}
+  
+
+&
+\multicolumn{6}{|c|}{imm[11:0]} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0011011} & ADDIW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0011011} & SLLIW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0011011} & SRLIW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0100000} &
+\multicolumn{2}{c|}{shamt} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0011011} & SRAIW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0111011} & ADDW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0100000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{000} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0111011} & SUBW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{001} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0111011} & SLLW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0000000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0111011} & SRLW \\
+\cline{2-11}
+  
+
+&
+\multicolumn{4}{|c|}{0100000} &
+\multicolumn{2}{c|}{rs2} &
+\multicolumn{1}{c|}{rs1} &
+\multicolumn{1}{c|}{101} &
+\multicolumn{1}{c|}{rd} &
+\multicolumn{1}{c|}{0111011} & SRAW \\
+\cline{2-11}
+  
+
+
